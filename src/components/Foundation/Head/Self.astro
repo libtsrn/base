@@ -24,7 +24,7 @@ const { description } = Astro.props;
   <!-- Web Page Metadata  -->
   <title>{title}</title>
   <meta name="description" content={description}>
-  <meta name="author" content="Takagi Tasuku">
+  <meta name="author" content={import.meta.env.AUTHOR || "Unknwon User"}>
   <meta name="color-scheme" content="light dark">
   <!-- Other -->
   <script src="@libraries/theme/quick-init.js" />

@@ -6,13 +6,16 @@ import Body from "@components/Foundation/Body/Self.astro";
 import "../styles/global.css";
 
 
-interface Props extends HeadProps {};
+interface Props extends HeadProps { parent?: string };
 
 
-const { title, description } = Astro.props;
+const { title, description, parent } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="ja" data-theme="dark">
   <Head title={title} description={description}><slot name="meta-head" /></Head>
-  <Body><slot /></Body>
+  <Body>
+    {parent == "none" ? null : <a href={parent || "../"}>戻る</a>}
+    <slot />
+  </Body>
 </html>

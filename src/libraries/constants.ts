@@ -1,5 +1,3 @@
-// tasuren's Website - Constants
-
-
-export const WEBSITE_TITLE = "tasurenのウェブサイト";
-export const ME = "д`*]";
+export const WEBSITE_TITLE = import.meta.env.TITLE || "tsrn book";
+export const AUTHOR = import.meta.env.AUTHOR || "Some one";
+export const LOGO = import.meta.env.LOGO || "📕";

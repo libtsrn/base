@@ -1,0 +1,19 @@
+---
+import { LOGO } from "@libraries/constants";
+
+interface Props { additionalClass?: string };
+---
+{
+  LOGO.includes(".") ? <img src={LOGO}> : <>
+    <style>
+      a {
+        font-family: Arial, 'Source Code Pro', monospace;
+        font-size: 40px; text-align: center;
+        text-decoration: none;
+      }
+      a:link { color: var(--color); }
+      a:visited { color: var(--color); }
+    </style>
+    <a class={Astro.props.additionalClass} href="/">{LOGO}</a>
+  </>
+}

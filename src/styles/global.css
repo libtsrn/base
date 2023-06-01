@@ -1,4 +1,4 @@
-/* tasuren's Website - CSS for Global */
+/* tasuren's Book - CSS for Global */
 
 
 /* リセット */
@@ -12,28 +12,21 @@ h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; }
 }
 
 :root {
-  --link-color: #5ba2f5;
-  --link-color-visited: #8d99c9;
   /* ライトテーマ */
   --color: black;
-  --background-color: var(--kikuo);
-  --background-color-for-code: #f9f4f1;
+  --background-color: white;
+  --background-color-for-code: var(--kikuo);
 }
 
 :root[data-theme="dark"] {
   /* ダークテーマ */
   --color: white;
-  --background-color: var(--maretu);
-  --background-color-for-code: #191724;
+  --background-color: black;
+  --background-color-for-code: var(--maretu);
 }
 
 
 /* 一般 */
-a:link { color: var(--link-color); }
-.no-visited-color a:visited { color: var(--link-color) }
-
-.neutral { opacity: 0.7; }
-
 @media (480px < width) { .sp-only { display: none; } }
 @media (480px >= width) { .pc-only { display: none; } }
 
@@ -42,7 +35,6 @@ code {
   border-radius: 0.4vh;
   padding: 0.3vh 0.4vh;
   font-family: 'Source Code Pro', monospace;
-  opacity: 0.8;
   font-size: 13px;
 }
 

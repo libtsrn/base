@@ -1,0 +1,18 @@
+---
+import Head from "@components/Foundation/Head/Self.astro";
+import { Props as HeadProps } from "@components/Foundation/Head/Self.astro";
+import Body from "@components/Foundation/Body/Self.astro";
+
+import "../styles/global.css";
+
+
+interface Props extends HeadProps {};
+
+
+const { title, description } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+  <Head title={title} description={description}><slot name="meta-head" /></Head>
+  <Body><slot /></Body>
+</html>

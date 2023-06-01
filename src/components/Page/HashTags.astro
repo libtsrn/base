@@ -1,0 +1,15 @@
+---
+import { toSnakeCase } from "@libraries/utils";
+
+interface Props {
+  tags: string[],
+  base?: string,
+  useSnakeCaseOnLink?: boolean
+};
+---
+{Astro.props.tags.map(tag => <><a href={
+  `${Astro.props.base || "/blog/tags"}/${
+    Astro.props.useSnakeCaseOnLink || true
+      ? toSnakeCase(tag) : tag
+  }/1`
+}>#{tag}</a>&ensp;</>)}

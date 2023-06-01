@@ -1,0 +1,15 @@
+---
+import { ME as LOGO } from "@libraries/constants";
+
+interface Props { additionalClass: string };
+---
+<style>
+  a {
+    font-family: Arial, 'Source Code Pro', monospace;
+    font-size: 34px; text-align: center;
+    text-decoration: none;
+  }
+  a:link { color: var(--color); }
+  a:visited { color: var(--color); }
+</style>
+<a class={Astro.props.additionalClass} href="/">{LOGO}</a>

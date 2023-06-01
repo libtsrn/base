@@ -1,0 +1,46 @@
+---
+import Header from "./Header.astro";
+import Main from "./Main.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+---
+<style is:global>
+  /* レスポンシブ */
+  nav { font-size: 140%; }
+
+  @media (480px < width) {
+    nav, main { height: 100%; }
+    main { width: 60%; }
+
+    body {
+      font-size: 16px;
+      /* 横並び */
+      display: flex;
+      justify-content: space-evenly;
+      /* 位置調整 */
+      margin-top: 10%; margin-bottom: 10%;
+    }
+  }
+
+  @media (480px >= width) {
+    /* スマホ時。 */
+    nav { margin: 0 auto; }
+    body { padding: 0 1%; }
+  }
+</style>
+<style>
+  /*@import url('https://fonts.googleapis.com/css2?family=Yomogi&display=swap');*/
+  /*@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap');*/
+  @import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
+
+  body {
+    background-color: var(--background-color);
+    font-family: 'Zen Kurenaido', sans-serif;
+    color: var(--color);
+    opacity: 0.85;
+  }
+</style>
+<body>
+  <Header />
+  <Main><slot /></Main>
+  <ThemeToggle />
+</body>

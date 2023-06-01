@@ -1,0 +1,38 @@
+---
+import FloatButton from "@components/FloatButton.astro";
+---
+<style is:global>
+  #theme-toggle {
+    font-size: 20px;
+    /* 一調整 */
+    right: 10%; bottom: 10%;
+    /* デフォルトのテーマの無効化。 */
+    background: none;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+</style>
+<script>
+  import { get, set, roll, effect, detectTheme, emoji } from "@libraries/theme";
+
+  // ボタンの絵文字が更新されるようにする。
+  let toggleButton = document.getElementById("theme-toggle");
+  window.addEventListener("updateemoji",
+    (e: CustomEvent) => toggleButton
+      .innerText = e.detail);
+  toggleButton.innerText = emoji;
+
+  // テーマ切り替えボタンを用意する。
+  toggleButton.addEventListener("click", () => {
+    // 設定を読み込み、テーマの更新を行う。
+    let setting = roll(get()); set(setting);
+    effect(setting, detectTheme(setting), true);
+  });
+
+  // テーマ切り替えがゆったりするようにする。
+  setTimeout(() => document.body.style.transition = "background .5s", .6);
+</script>
+<FloatButton id="theme-toggle" text="🌙" />

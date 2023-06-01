@@ -1,0 +1,13 @@
+---
+import hljs from "highlight.js";
+
+const highlightStyleLinks = {
+  dark: `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/${
+    hljs.versionString
+  }/styles/base16/ros-pine.min.css`,
+  light: `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/${
+    hljs.versionString
+  }/styles/base16/ros-pine-dawn.min.css`
+}
+---
+<script set:html={JSON.stringify(highlightStyleLinks)} type="application/json" id="highlight-style-links" />

@@ -1,0 +1,10 @@
+---
+interface Props {
+  id: string, text: string,
+  type?: "button" | "reset" | "submit"
+};
+---
+<style>button { position: fixed; cursor: pointer; }</style>
+<button id={Astro.props.id}
+    type={Astro.props.type || "button"}>
+  {Astro.props.text}</button>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tasuren.xyz/sitemap-index.xml

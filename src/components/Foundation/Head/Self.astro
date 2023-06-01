@@ -1,0 +1,37 @@
+---
+import { WEBSITE_TITLE } from "@libraries/constants";
+
+
+export interface Props {
+  title: string;
+  description: string;
+};
+
+
+var title = Astro.props.title;
+if (title) title = `${WEBSITE_TITLE} - ${title}`
+else title = WEBSITE_TITLE;
+
+
+const { description } = Astro.props;
+---
+<head>
+  <!-- General Metadata  -->
+  <meta charset="utf-8">
+  <meta name="generator" content={Astro.generator}>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,user-scalable=yes">
+  <link rel="sitemap" href="/sitemap-index.xml">
+  <!-- Web Page Metadata  -->
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta name="author" content="Takagi Tasuku">
+  <meta name="color-scheme" content="light dark">
+  <!-- Other -->
+  <script src="@libraries/theme/quick-init.js" />
+  <script>
+    // 完全な初期化をする。
+    import { initialize as initializeTheme } from "@libraries/theme";
+    initializeTheme(false);
+  </script>
+  <slot />
+</head>
